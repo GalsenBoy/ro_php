@@ -2,12 +2,12 @@
 
 class Cercle
 {
-    protected $center;
     protected $ray;
+    private Point $point;
 
-    public function __construct(int $center, int $ray)
+    public function __construct(int $ray, Point $p)
     {
-        $this->center = $center;
+        $this->point = $p;
         $this->$ray = $ray;
     }
 }
