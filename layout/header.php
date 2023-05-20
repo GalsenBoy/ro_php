@@ -1,3 +1,10 @@
+<?php
+$links = [
+    'Accueil' => '/index.php',
+    'Blog' => '/blog.php',
+    'Contact' => '/contact.php',
+]
+?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
 
@@ -182,16 +189,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <li class="nav-item">
-                        <a class="nav-link <?php echo ($_SERVER['SCRIPT_NAME'] === '/index.php' ? 'active' : ''); ?>" aria-current="page" href="/index.php">Accueil</a>
-
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link  <?php echo ($_SERVER['SCRIPT_NAME'] === '/blog.php' ? 'active' : ''); ?>" href="/blog.php">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link  <?php echo ($_SERVER['SCRIPT_NAME'] === '/contact.php' ? 'active' : ''); ?> " href="/contact.php">Contact</a>
-                    </li>
+                    <?php foreach ($links as $key => $link) : ?>
+                        <li class="nav-item">
+                            <a class="nav-link <?php echo ($_SERVER['SCRIPT_NAME'] === $link ? 'active' : ''); ?>" aria-current="page" href=<?= $link ?>><?= $key ?></a>
+                        </li>
+                    <?php endforeach ?>
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
