@@ -1,4 +1,7 @@
-<?php include './layout/header.php' ?>
+<?php
+$title = "Accueil";
+include './layout/header.php' ?>
+
 <main class="container">
     <div class="bg-body-tertiary p-5 rounded">
         <h1>Navbar example</h1>
