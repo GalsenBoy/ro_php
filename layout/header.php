@@ -183,13 +183,14 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+                        <a class="nav-link <?php echo ($_SERVER['SCRIPT_NAME'] === '/index.php' ? 'active' : ''); ?>" aria-current="page" href="/index.php">Accueil</a>
+
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
+                        <a class="nav-link  <?php echo ($_SERVER['SCRIPT_NAME'] === '/blog.php' ? 'active' : ''); ?>" href="/blog.php">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled">Contact</a>
+                        <a class="nav-link  <?php echo ($_SERVER['SCRIPT_NAME'] === '/contact.php' ? 'active' : ''); ?> " href="/contact.php">Contact</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
