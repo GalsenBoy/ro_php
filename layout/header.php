@@ -11,9 +11,9 @@
     <meta name="generator" content="Hugo 0.111.3">
     <title>
         <?php if (isset($title)) : ?>
-            <?php echo $title ?>
+            <?= $title ?>
         <?php else : ?>
-            <?php echo "Mon blog" ?>
+            <?= "Mon blog" ?>
         <?php endif ?>
     </title>
 
