@@ -4,10 +4,11 @@ $myster = 200;
 include './layout/header.php';
 ?>
 
-{# <pre><?php var_dump($_GET) ?></pre> #}
 
 <?php
-$input = $_GET['number'];
+if (isset($_GET['number'])) {
+    $input = $_GET['number'];
+}
 
 if ($input > $myster) : ?>
     Le nombre saisie est trop grand
