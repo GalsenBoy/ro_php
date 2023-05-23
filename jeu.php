@@ -6,23 +6,32 @@ include './layout/header.php';
 
 
 <?php
-if (isset($_GET['number'])) {
+if (isset($_GET['number'])) :
     $input = $_GET['number'];
-}
-
-if ($input > $myster) : ?>
-    Le nombre saisie est trop grand
-<?php elseif ($input < $myster) : ?>
-    Le nombre saisie est trop petit
-<?php else : ?>
-    Bravo!!!!! vous avez deviné le bon nombre
+    if ($input > $myster) : ?>
+        <div class="alert alert-danger container mx 20">
+            <h3> Le nombre saisi est trop grand</h3>
+        </div>
+    <?php elseif ($input < $myster) : ?>
+        <div class="alert alert-danger container mx-20">
+            <h3> Le nombre saisi est trop petit</h3>
+        </div>
+    <?php else : ?>
+        <div class="alert alert-success container ">
+            <h3> Bravo!!! vous avez deviné le bon nombre</h3>
+        </div>
+    <?php endif ?>
 <?php endif ?>
 
 
+
+
 <form action="/jeu.php" method="GET">
-    <label for="">Veuillez saisir le nombre</label>
-    <input type="number" name="number">
-    <button type="submit">Deviner</button>
+    <div class="form-group">
+        <label for="">Veuillez saisir le nombre</label>
+        <input class="form-control" type="text placeholder=" name=" number">
+    </div>
+    <button type="submit" class="btn btn-primary">Deviner</button>
 </form>
 
 
