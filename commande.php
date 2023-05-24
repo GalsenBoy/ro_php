@@ -25,12 +25,14 @@ require './layout/header.php';
 
 <form action="./commande.php" method="get">
     <div class="form-group">
-        <input type="checkbox" class="form-check-input" name="parfums[]" value="Fraise" id="">
-        <label class="form-check-label" for="">Fraise</label>
-        <input type="checkbox" class="form-check-input" name="parfums[]" value="Chocolat" id="">
-        <label class="form-check-label" for="">Chocolat</label>
-        <input type="checkbox" class="form-check-input" name="parfums[]" value="Vanille" id="">
-        <label class="form-check-label" for="">Vanille</label>
+        <?php foreach ($parfums as $parfum => $prix) : ?>
+            <div class="checkbox">
+                <label for="">
+                    <input type="checkbox" name="parfum[]" value="<?= $parfum ?>" id="">
+                    <?= $parfum . " " . $prix ?>
+                </label>
+            </div>
+        <?php endforeach ?>
     </div>
     <div class="form-group">
         <input type="radio" class="form-check-input" name="cornets" value="Pot" id="">
@@ -44,10 +46,8 @@ require './layout/header.php';
         <input type="checkbox" class="form-check-input" name="supplements[]" value="Chantilly" id="">
         <label class="form-check-label" for="">Chantilly</label>
     </div>
-    <button type="submit" class="btn btn-primary">Commander</button>
+    <button type="submit" class="btn btn-primary m-2">Commander</button>
 </form>
-
-
 
 
 
