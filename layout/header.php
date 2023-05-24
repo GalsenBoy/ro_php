@@ -3,7 +3,8 @@ $links = [
     'Accueil' => '/index.php',
     'Blog' => '/blog.php',
     'Contact' => '/contact.php',
-    'Jeu' => '/jeu.php'
+    'Jeu' => '/jeu.php',
+    'Commande' => '/commande.php'
 ]
 ?>
 <!doctype html>
