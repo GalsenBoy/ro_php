@@ -24,27 +24,35 @@ require './layout/header.php';
 <pre><?php var_dump($_GET) ?></pre>
 
 <form action="./commande.php" method="get">
-    <div class="form-group">
+    <div class="form-group m-3">
         <?php foreach ($parfums as $parfum => $prix) : ?>
             <div class="checkbox">
                 <label for="">
-                    <input type="checkbox" name="parfum[]" value="<?= $parfum ?>" id="">
+                    <input type="checkbox" name="parfums[]" value="<?= $parfum ?>" id="">
                     <?= $parfum . " " . $prix ?>
                 </label>
             </div>
         <?php endforeach ?>
     </div>
-    <div class="form-group">
-        <input type="radio" class="form-check-input" name="cornets" value="Pot" id="">
-        <label for="" class="form-check-label">Pot</label>
-        <input type="radio" class="form-check-input" name="cornets" value="Cornet" id="">
-        <label for="" class="form-check-label">Cornet</label>
+    <div class="form-group m-3">
+        <?php foreach ($cornets as $type => $prix) : ?>
+            <div class="radio">
+                <label for="">
+                    <input type="radio" name="cornets[]" value="<?= $type ?>" id="">
+                    <?= $type ?>
+                </label>
+            </div>
+        <?php endforeach ?>
     </div>
-    <div class="form-group">
-        <input type="checkbox" class="form-check-input" value="Pépites de chocolat " name="supplements[]" id="">
-        <label class="form-check-label" for="">Pépites de chocolat</label>
-        <input type="checkbox" class="form-check-input" name="supplements[]" value="Chantilly" id="">
-        <label class="form-check-label" for="">Chantilly</label>
+    <div class="form-group m-3">
+        <?php foreach ($supplements as $gout => $prix) : ?>
+            <div class="checkbox">
+                <label for="">
+                    <input type="checkbox" name="supplements[]" value="<?= $gout ?>" id="">
+                    <?= $gout ?>
+                </label>
+            <?php endforeach ?>
+            </div>
     </div>
     <button type="submit" class="btn btn-primary m-2">Commander</button>
 </form>
