@@ -24,23 +24,38 @@ require './layout/header.php';
 <pre><?php var_dump($_GET) ?></pre>
 
 <form action="./commande.php" method="get">
-    <div>
-        <input type="checkbox" name="parfums[]" value="Fraise" id="">Fraise
-        <input type="checkbox" name="parfums[]" value="Chocolat" id="">Chocolat
-        <input type="checkbox" name="parfums[]" value="Vanille" id="">Vanille
+    <div class="form-group m-3">
+        <?php foreach ($parfums as $parfum => $prix) : ?>
+            <div class="checkbox">
+                <label for="">
+                    <input type="checkbox" name="parfums[]" value="<?= $parfum ?>" id="">
+                    <?= $parfum . " " . $prix ?>
+                </label>
+            </div>
+        <?php endforeach ?>
     </div>
-    <div>
-        <input type="radio" name="cornets" value="Pot" id="">Pot
-        <input type="radio" name="cornets" value="Cornet" id="">Cornet
+    <div class="form-group m-3">
+        <?php foreach ($cornets as $type => $prix) : ?>
+            <div class="radio">
+                <label for="">
+                    <input type="radio" name="cornets[]" value="<?= $type ?>" id="">
+                    <?= $type ?>
+                </label>
+            </div>
+        <?php endforeach ?>
     </div>
-    <div>
-        <input type="checkbox" value="Pépites de chocolat " name="supplements[]" id="">Pépites de chocolat
-        <input type="checkbox" name="supplements[]" value="Chantilly" id="">Chantilly
+    <div class="form-group m-3">
+        <?php foreach ($supplements as $gout => $prix) : ?>
+            <div class="checkbox">
+                <label for="">
+                    <input type="checkbox" name="supplements[]" value="<?= $gout ?>" id="">
+                    <?= $gout ?>
+                </label>
+            <?php endforeach ?>
+            </div>
     </div>
-    <button type="submit">Commander</button>
+    <button type="submit" class="btn btn-primary m-2">Commander</button>
 </form>
-
-
 
 
 
