@@ -1,4 +1,6 @@
 <?php
+
+require './layout/header.php';
 //Checkbox
 $parfums = [
     'Fraise' => 4,
@@ -18,10 +20,8 @@ $supplements = [
     'Chantilly' => 0.5
 ];
 
-require './layout/header.php';
-?>
 
-<pre><?php var_dump($_GET) ?></pre>
+?>
 
 <form action="./commande.php" method="get">
     <div class="form-group m-3">
@@ -29,7 +29,7 @@ require './layout/header.php';
             <div class="checkbox">
                 <label for="">
                     <input type="checkbox" name="parfums[]" value="<?= $parfum ?>" id="">
-                    <?= $parfum . " " . $prix ?>
+                    <?= $parfum ?> - <?= $prix ?> €
                 </label>
             </div>
         <?php endforeach ?>
@@ -39,17 +39,17 @@ require './layout/header.php';
             <div class="radio">
                 <label for="">
                     <input type="radio" name="cornets[]" value="<?= $type ?>" id="">
-                    <?= $type ?>
+                    <?= $type ?> - <?= $prix ?> €
                 </label>
             </div>
         <?php endforeach ?>
     </div>
     <div class="form-group m-3">
-        <?php foreach ($supplements as $gout => $prix) : ?>
+        <?php foreach ($supplements as $supplement => $prix) : ?>
             <div class="checkbox">
                 <label for="">
-                    <input type="checkbox" name="supplements[]" value="<?= $gout ?>" id="">
-                    <?= $gout ?>
+                    <input type="checkbox" name="supplements[]" value="<?= $supplement ?>" id="">
+                    <?= $supplement ?> - <?= $prix ?> €
                 </label>
             <?php endforeach ?>
             </div>
