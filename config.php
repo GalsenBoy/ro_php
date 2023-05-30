@@ -1,5 +1,4 @@
 <?php
-
 define('JOURS', [
     'Lundi',
     'Mardi',
