@@ -5,7 +5,6 @@ $links = [
     'Contact' => '/contact.php',
     'Jeu' => '/jeu.php',
     'Commande' => '/commande.php',
-    'Créneaux' => '/creneaux.php',
 ]
 ?>
 <!doctype html>

@@ -1,8 +1,22 @@
-<?php $title = "Contact";
+<?php
 include './layout/header.php';
+require_once './config.php';
+$creneaux = [];
+
+foreach (CRENEAUX as $key) {
+    // var_dump($key);
+    $creneaux[] = $key;
+}
 ?>
 
 
-<h2>Ici!! pour me contacter</h2>
+<H1>Les horaires d'ouvertures</H1>
+<div>
+    <?php foreach ($creneaux as $creneau) : ?>
+        De <?= $creneau[0] ?>h à <?= $creneau[1] ?>h
+    <?php endforeach ?>
+</div>
 
-<?php include './layout/footer.php' ?>
+
+<?php
+include './layout/footer.php';
