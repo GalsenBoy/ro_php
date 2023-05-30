@@ -20,6 +20,18 @@ $supplements = [
     'Chantilly' => 0.5
 ];
 
+$total = 0;
+$tt = 0;
+
+if (isset($_GET)) {
+    foreach ($_GET as $parfum => $value) {
+        foreach ($value as $pf) {
+            $tt += $parfums[$pf];
+        }
+    }
+    $total += $tt;
+    echo $total;
+}
 
 ?>
 
@@ -28,18 +40,18 @@ $supplements = [
         <?php foreach ($parfums as $parfum => $prix) : ?>
             <div class="checkbox">
                 <label for="">
-                    <input type="checkbox" name="parfums[]" value="<?= $parfum ?>" id="">
+                    <input type="checkbox" name="parfum[]" value="<?= $parfum ?>" id="">
                     <?= $parfum ?> - <?= $prix ?> €
                 </label>
             </div>
         <?php endforeach ?>
     </div>
     <div class="form-group m-3">
-        <?php foreach ($cornets as $type => $prix) : ?>
+        <?php foreach ($cornets as $cornet => $prix) : ?>
             <div class="radio">
                 <label for="">
-                    <input type="radio" name="cornets[]" value="<?= $type ?>" id="">
-                    <?= $type ?> - <?= $prix ?> €
+                    <input type="radio" name="cornet[]" value="<?= $cornet ?>" id="">
+                    <?= $cornet ?> - <?= $prix ?> €
                 </label>
             </div>
         <?php endforeach ?>
@@ -48,7 +60,7 @@ $supplements = [
         <?php foreach ($supplements as $supplement => $prix) : ?>
             <div class="checkbox">
                 <label for="">
-                    <input type="checkbox" name="supplements[]" value="<?= $supplement ?>" id="">
+                    <input type="checkbox" name="radio[]" value="<?= $supplement ?>" id="">
                     <?= $supplement ?> - <?= $prix ?> €
                 </label>
             <?php endforeach ?>
