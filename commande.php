@@ -1,4 +1,6 @@
 <?php
+
+require './layout/header.php';
 //Checkbox
 $parfums = [
     'Fraise' => 4,
@@ -18,38 +20,38 @@ $supplements = [
     'Chantilly' => 0.5
 ];
 
-require './layout/header.php';
+$total = 0;
+$tt = 0;
+
 ?>
-
-<pre><?php var_dump($_GET) ?></pre>
-
+<h2>Passer une commande</h2>
 <form action="./commande.php" method="get">
     <div class="form-group m-3">
         <?php foreach ($parfums as $parfum => $prix) : ?>
             <div class="checkbox">
                 <label for="">
-                    <input type="checkbox" name="parfums[]" value="<?= $parfum ?>" id="">
-                    <?= $parfum . " " . $prix ?>
+                    <input type="checkbox" name="parfum[]" value="<?= $parfum ?>" id="">
+                    <?= $parfum ?> - <?= $prix ?> €
                 </label>
             </div>
         <?php endforeach ?>
     </div>
     <div class="form-group m-3">
-        <?php foreach ($cornets as $type => $prix) : ?>
+        <?php foreach ($cornets as $cornet => $prix) : ?>
             <div class="radio">
                 <label for="">
-                    <input type="radio" name="cornets[]" value="<?= $type ?>" id="">
-                    <?= $type ?>
+                    <input type="radio" name="cornet[]" value="<?= $cornet ?>" id="">
+                    <?= $cornet ?> - <?= $prix ?> €
                 </label>
             </div>
         <?php endforeach ?>
     </div>
     <div class="form-group m-3">
-        <?php foreach ($supplements as $gout => $prix) : ?>
+        <?php foreach ($supplements as $supplement => $prix) : ?>
             <div class="checkbox">
                 <label for="">
-                    <input type="checkbox" name="supplements[]" value="<?= $gout ?>" id="">
-                    <?= $gout ?>
+                    <input type="checkbox" name="radio[]" value="<?= $supplement ?>" id="">
+                    <?= $supplement ?> - <?= $prix ?> €
                 </label>
             <?php endforeach ?>
             </div>
@@ -57,8 +59,18 @@ require './layout/header.php';
     <button type="submit" class="btn btn-primary m-2">Commander</button>
 </form>
 
+<?php
+if (isset($_GET)) {
+    foreach ($_GET as $parfum => $value) {
+        foreach ($value as $pf) {
+            $tt += $parfums[$pf];
+        }
+    }
+    $total += $tt;
+    if (!empty($total)) {
+        echo "<div class='alert alert-success container'><h3 class='text-center'>Votre total est de : $total €</h3></div>";
+    }
+}
 
 
-<h2>Passer une commande</h2>
-
-<?php require './layout/footer.php';
+require './layout/footer.php';
