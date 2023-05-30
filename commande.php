@@ -23,20 +23,8 @@ $supplements = [
 $total = 0;
 $tt = 0;
 
-if (isset($_GET)) {
-    foreach ($_GET as $parfum => $value) {
-        foreach ($value as $pf) {
-            $tt += $parfums[$pf];
-        }
-    }
-    $total += $tt;
-    if (!empty($total)) {
-        echo $total;
-    }
-}
-
 ?>
-
+<h2>Passer une commande</h2>
 <form action="./commande.php" method="get">
     <div class="form-group m-3">
         <?php foreach ($parfums as $parfum => $prix) : ?>
@@ -71,8 +59,18 @@ if (isset($_GET)) {
     <button type="submit" class="btn btn-primary m-2">Commander</button>
 </form>
 
+<?php
+if (isset($_GET)) {
+    foreach ($_GET as $parfum => $value) {
+        foreach ($value as $pf) {
+            $tt += $parfums[$pf];
+        }
+    }
+    $total += $tt;
+    if (!empty($total)) {
+        echo "<div class='alert alert-success container'><h3 class='text-center'>Votre total est de : $total €</h3></div>";
+    }
+}
 
 
-<h2>Passer une commande</h2>
-
-<?php require './layout/footer.php';
+require './layout/footer.php';
