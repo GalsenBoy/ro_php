@@ -30,7 +30,9 @@ if (isset($_GET)) {
         }
     }
     $total += $tt;
-    echo $total;
+    if (!empty($total)) {
+        echo $total;
+    }
 }
 
 ?>
