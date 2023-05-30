@@ -71,6 +71,4 @@ if (isset($_GET)) {
         echo "<div class='alert alert-success container'><h3 class='text-center'>Votre total est de : $total €</h3></div>";
     }
 }
-
-
 require './layout/footer.php';

@@ -4,7 +4,7 @@ $links = [
     'Blog' => '/blog.php',
     'Contact' => '/contact.php',
     'Jeu' => '/jeu.php',
-    'Commande' => '/commande.php'
+    'Commande' => '/commande.php',
 ]
 ?>
 <!doctype html>
