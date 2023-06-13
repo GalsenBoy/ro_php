@@ -1,5 +1,5 @@
 <?php
-include './layout/header.php';
+include '../layout/header.php';
 require_once './config.php';
 
 ?>
@@ -31,4 +31,4 @@ require_once './config.php';
 <?php endif ?>
 <?php endforeach ?>
 </ul>
-<?php include './layout/footer.php';
+<?php include '../layout/footer.php';

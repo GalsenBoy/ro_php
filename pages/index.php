@@ -1,6 +1,6 @@
 <?php
 $title = "Accueil";
-include './layout/header.php' ?>
+include '../layout/header.php' ?>
 
 <main class="container">
     <div class="bg-body-tertiary p-5 rounded">
@@ -10,4 +10,4 @@ include './layout/header.php' ?>
     </div>
 </main>
 
-<?php include './layout/footer.php' ?>
+<?php include '../layout/footer.php' ?>

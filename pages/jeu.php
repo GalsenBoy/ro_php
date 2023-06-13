@@ -1,7 +1,7 @@
 <?php
 $title = 'jeu';
 $myster = 200;
-include './layout/header.php';
+include '../layout/header.php'; 
 ?>
 
 
@@ -36,4 +36,4 @@ if (isset($_GET['number'])) :
 
 
 
-<?php include './layout/footer.php'; ?>
+<?php include '../layout/footer.php'; ?>
