@@ -1,6 +1,6 @@
 <?php
 
-require './layout/header.php';
+require '../layout/header.php';
 //Checkbox
 $parfums = [
     'Fraise' => 4,
@@ -71,4 +71,4 @@ if (isset($_GET)) {
         echo "<div class='alert alert-success container'><h3 class='text-center'>Votre total est de : $total €</h3></div>";
     }
 }
-require './layout/footer.php';
+require '../layout/footer.php';

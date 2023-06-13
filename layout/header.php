@@ -1,11 +1,11 @@
 <?php
 $links = [
-    'Accueil' => '/index.php',
-    'Blog' => '/blog.php',
-    'Contact' => '/contact.php',
-    'Jeu' => '/jeu.php',
-    'Commande' => '/commande.php',
-    'Newsletter' => '/newsletter.php'
+    'Accueil' => '/pages/index.php',
+    'Blog' => '/pages/blog.php',
+    'Contact' => '/pages/contact.php',
+    'Jeu' => '/pages/jeu.php',
+    'Commande' => '/pages/commande.php',
+    'Newsletter' => '/pages/newsletter.php'
 ]
 ?>
 <!doctype html>
